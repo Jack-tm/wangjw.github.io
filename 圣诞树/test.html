@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="app"></div>
+		<button onclick="but()" type="button">get</button>
+		<button onclick="put()" type="button">doPut</button>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+		function but(){
+			$.get("http://localhost:8080/mall/test",function(res){
+				$(".app").html(res);
+			})
+		}
+		
+		function put(){
+			$.ajax({
+				type: 'put',
+				url: 'http://localhost:8080/mall/doPut',
+				success: function(res){
+					$(".app").html(res);
+				}
+			})
+		}
+	</script>
+</html>

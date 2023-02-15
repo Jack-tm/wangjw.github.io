@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>随机红包</title>
+		<style>
+			/* 改变间距计算方式 */
+			* {
+				box-sizing: border-box;
+			}
+
+			/* 设置间距和字体 */
+			body {
+				margin: .5em;
+				font: lighter 16px "微软雅黑";
+			}
+
+			/* 标题变细 */
+			h1,
+			h2,
+			h3 {
+				font-weight: lighter;
+			}
+
+			/* 图片响应式 */
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+			.red-packet{
+			    color: #fff;
+			    padding: 1em;
+			    height: 35em;
+			    margin: auto;
+			    max-width: 25em;
+			    overflow: hidden;
+			    position: relative;
+			    border-radius: 1em;
+			    background: #c40b00;
+			}
+			.red-packet header{
+			    top: -14.5em;
+			    left: 0;
+			    right: 0;
+			    height: 25em;
+			    position: absolute;
+			    border-radius: 100%;
+			    background: #b00b00;
+			}
+			.red-packet img{
+			    left: 0;
+			    right: 0;
+			    bottom: -2em;
+			    margin: auto;
+			    max-width: 5em;
+			    position: absolute;
+			    border-radius: 100%;
+			    border: .25em solid #fff;
+			}
+			.red-packet main{
+			    margin-top: 15em;
+			    text-align: center;
+			}
+			.red-packet .author{
+			    opacity: .7;
+			}
+			.red-packet .open{
+			    outline: 0;
+			    width: 3em;
+			    height: 3em;
+			    color: #fff;
+			    border: none;
+			    display: block;
+			    font-size: 2em;
+			    cursor: pointer;
+			    margin: 1em auto;
+			    background: #ffb03a;
+			    border-radius: 100%;
+			    transition: background .3s, transform .3s;
+			}
+			.red-packet .open:hover{
+			    transform: scale(1.1);
+			}
+			.red-packet .open:active{
+			    background: #eba534;
+			}
+			@keyframes red-packet{
+			    from{
+			        opacity: 0;
+			        transform: scale(0);
+			    }
+			    to{
+			        opacity: 1;
+			        transform: scale(1);
+			    }
+			}
+		</style>
+	</head>
+	<body>
+		<div class="red-packet">
+			<header>
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeVjG3T5gEeGFC5kTUYmN53_DDQg6Wy_6e1g&usqp=CAU" />
+			</header>
+			<main>
+				<h1>祝你生活愉快</h1>
+				<p class="author">奇趣保罗敬上</p>
+				<button class="open">开</button>
+			</main>
+		</div>
+
+	</body>
+</html>
+<script>
+	//点击 “领取红包” 按钮
+	function openLuckyMoney() {
+		document.querySelector('.unGetLuckyMoneyWrapJs').remove(); //移除带有‘点击领取’按钮的图片
+		document.querySelector('.luckyMoneyJs').style.display = 'flex'; //旋转+抖动
+		setTimeout(function() {
+			document.querySelector('.luckyMoneyJs').remove(); //移除 旋转+抖动 的图
+			document.querySelector('.getLuckyMoneyWrapJs').style.display = 'flex'; //显示 金额 的静态图片
+			document.querySelector('.openLuckyJs').style.display = 'flex'; //打开红包  向上向下飞
+		}, 1000);
+		setTimeout(function() {
+			document.querySelector('.openLuckyJs').remove(); //移除 向上向下 飞的图片
+		}, 1800);
+	}
+	
+	$(".open").click(Function(){
+		alert(123)
+	})
+</script>
